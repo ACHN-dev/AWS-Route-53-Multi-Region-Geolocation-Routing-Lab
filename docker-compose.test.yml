@@ -1,0 +1,48 @@
+version: '3.8'
+
+services:
+  counting:
+    image: hashicorp/counting-service:0.0.2
+    container_name: counting-service
+    environment:
+      - PORT=9001
+    ports:
+      - "9001:9001"
+    networks:
+      - lab-net
+
+  tokyo-dashboard:
+    build:
+      context: ./tokyo-dashboard
+      dockerfile: Dockerfile
+    image: dashboard:tokyo-local
+    container_name: tokyo-dashboard
+    environment:
+      - PORT=80
+      - COUNTING_SERVICE_URL=http://counting:9001
+    ports:
+      - "8081:80"
+    depends_on:
+      - counting
+    networks:
+      - lab-net
+
+  london-dashboard:
+    build:
+      context: ./london-dashboard
+      dockerfile: Dockerfile
+    image: dashboard:london-local
+    container_name: london-dashboard
+    environment:
+      - PORT=80
+      - COUNTING_SERVICE_URL=http://counting:9001
+    ports:
+      - "8082:80"
+    depends_on:
+      - counting
+    networks:
+      - lab-net
+
+networks:
+  lab-net:
+    driver: bridge

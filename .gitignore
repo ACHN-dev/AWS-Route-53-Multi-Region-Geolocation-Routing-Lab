@@ -1,0 +1,12 @@
+# OS files
+.DS_Store
+Thumbs.db
+
+# Build artifacts and binaries
+dist/
+*.exe
+*.test
+*.out
+dashboard-service
+counting-service/counting-service
+rice-box.go

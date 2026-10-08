@@ -1,0 +1,90 @@
+/**
+ * Copyright IBM Corp. 2018, 2023
+ * SPDX-License-Identifier: MPL-2.0
+ */
+
+/*
+  Green theme for Tokyo (Asia Region)
+  Primary: #34a853
+  Dark: #176b3a
+  Accent: #e6f4ea
+*/
+
+body {
+  background: #34a853;
+  background: -moz-linear-gradient(-45deg, #34a853 0%, #176b3a 100%);
+  background: -webkit-linear-gradient(-45deg, #34a853 0%,#176b3a 100%);
+  background: linear-gradient(135deg, #34a853 0% ,#176b3a 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#34a853', endColorstr='#176b3a',GradientType=1 );
+
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+body,
+p {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #ffffff;
+  padding: 2em;
+}
+
+h1 {
+  color: #e6f4ea;
+  font-weight: 500;
+  font-size: 2.5em;
+  margin: 0 0 0.2em 0;
+}
+
+#line {
+  border-bottom: 8px solid #176b3a;
+  width: 5em;
+  margin: 10px auto;
+}
+
+#count {
+  font-size: 8em;
+  font-weight: bold;
+  color: #ffffff;
+  line-height: 1.1;
+  margin: 0.1em 0;
+}
+
+#hostname {
+  font-size: 1.3em;
+  color: #c8e6c9;
+  margin-top: 0.3em;
+}
+
+#connection-status {
+  position: fixed;
+  bottom: 1.5em;
+  right: 1.5em;
+  padding: 0.6em 1.2em;
+  border-radius: 20px;
+  background-color: rgba(0, 0, 0, 0.4);
+  color: #ffffff;
+  font-size: 0.9em;
+  font-weight: 500;
+}
+
+#connection-status.connected {
+  background-color: #2e7d32;
+}
+
+#connection-status.disconnected {
+  background-color: #d32f2f;
+}
